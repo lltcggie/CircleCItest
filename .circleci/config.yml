@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Publish assets
           command: |
-            ghr
+            echo $CIRCLE_TAG
 
 workflows:
   version: 2
@@ -31,4 +31,4 @@ workflows:
       - build:
           filters:
             tags:
-              only: /^[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?-custom$/
+              only: /.*/
