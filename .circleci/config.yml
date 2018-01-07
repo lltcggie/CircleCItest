@@ -23,6 +23,11 @@ jobs:
           name: Publish assets
           command: |
             echo $CIRCLE_TAG
+            if [[ "$CIRCLE_TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+-rc\.[0-9]+-custom$ ]]; then
+              echo "matched"
+            else
+              echo "unmatched"
+            fi
 
 workflows:
   version: 2
