@@ -6,7 +6,6 @@ jobs:
   build:
     <<: *defaults
     docker:
-      - image: circleci/node:4.8
       - image: circleci/golang:1.8
 
     steps:
