@@ -23,11 +23,14 @@ jobs:
           name: Publish assets
           command: |
             echo $CIRCLE_TAG
+            PRE_RELEASE=
             if [[ "$CIRCLE_TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+-rc\.[0-9]+-custom$ ]]; then
               echo "matched"
+              PRE_RELEASE=-prerelease
             else
               echo "unmatched"
             fi
+            echo a $PRE_RELEASE
 
 workflows:
   version: 2
